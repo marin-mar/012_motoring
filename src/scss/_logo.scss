@@ -1,0 +1,30 @@
+/* logo */
+
+.logo {
+  font-family: "Playfairdisplaybold";
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 36px;
+  color: $light-color;
+
+  @media (min-width: 576px) {
+    font-size: 45px;
+    line-height: 65px;
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $second-color;
+      text-decoration: underline;
+    }
+  }
+}

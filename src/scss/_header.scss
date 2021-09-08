@@ -1,0 +1,57 @@
+/* header */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  color: $light-color;
+  background-color: transparent;
+  text-align: center;
+  padding: 5px;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__logo {
+    z-index: 5;
+  }
+
+  &__menu {
+    order: 1;
+    margin: 0 30px;
+
+    @media (min-width: 1900px) {
+      order: 0;
+    }
+  }
+
+  &__login {
+    display: none;
+
+    @media (min-width: 576px) {
+      display: flex;
+      z-index: 5;
+      margin-left: auto;
+    }
+
+    @media (min-width: 1900px) {
+      margin-left: 0;
+    }
+  }
+
+  &--sticky {
+    padding: 5px;
+    box-shadow: $box-shadow;
+    background-color: $dark-color;
+
+    & > .container > .menu > .menu__body::before {
+      height: 30px;
+    }
+  }
+}
