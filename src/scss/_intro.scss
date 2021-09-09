@@ -4,6 +4,8 @@
   padding-top: 4.5rem;
   color: $first-color;
   background-color: $dark-color;
+  position: relative;
+  max-height: 1200px;
 
   &__title {
     display: block;
@@ -14,8 +16,8 @@
     font-weight: 700;
     font-size: 1.5rem;
     position: absolute;
-    top: 10%;
-    left: 0%;
+    top: 25%;
+    left: 0;
     z-index: 5;
 
     @media (min-width: 500px) {

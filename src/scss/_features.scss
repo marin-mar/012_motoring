@@ -1,4 +1,51 @@
 /* features */
 
 .features {
+  &__container {
+    margin: 90px auto 30px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    @media (min-width: 1400px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    max-width: 300px;
+    margin: 10px;
+    padding: 10px;
+    padding-top: 60px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 50px;
+    text-align: center;
+
+    &--returns {
+      background-image: url("/img/features/features__item--returns.svg");
+    }
+    &--shipping {
+      background-image: url("/img/features/features__item--shipping.svg");
+    }
+    &--shopping {
+      background-image: url("/img/features/features__item--shopping.svg");
+    }
+    &--support {
+      background-image: url("/img/features/features__item--support.svg");
+    }
+  }
+
+  &__subtitle {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  &__text {
+    margin: 15px 0;
+  }
 }

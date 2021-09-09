@@ -3,3 +3,7 @@
 @@include('_intro.js')
 
 @@include('_popup404.js')
+
+document.addEventListener('DOMContentLoaded', function(){
+	autoPlaySlide();
+})
