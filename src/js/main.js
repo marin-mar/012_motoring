@@ -7,4 +7,7 @@
 
 document.addEventListener('DOMContentLoaded', function(){
 	autoPlaySlide();
+
+	// preload products
+	getProductsData(productsMoreBtn);
 })

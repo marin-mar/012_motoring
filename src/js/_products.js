@@ -14,8 +14,10 @@ productsMoreBtn.addEventListener("click", (e) => {
 
 productsAllBtn.addEventListener("click", (e) => {
   e.preventDefault();
+  productsList.textContent = "";
   getProductsData(productsAllBtn);
-  productsMoreBtn.remove();
+  productsMoreBtn.classList.add("btn--disabled");
+  productsAllBtn.classList.add("btn--disabled");
 });
 
 async function getProductsData(btn) {
@@ -53,6 +55,7 @@ function loadProductsData(data, btn) {
     		<span class="products__price--old">${data[i].oldprice}</span>
     	</p>
     </li>`;
+
     products.push(product);
 
     if (btn.classList.contains("products__title")) {
@@ -60,18 +63,18 @@ function loadProductsData(data, btn) {
         productsList.insertAdjacentHTML("beforeend", product);
       }
     }
-  }
 
-  if (btn.classList.contains("btn--all")) {
-    productsList.insertAdjacentHTML("beforeend", products);
-    btn.remove();
+    if (btn.classList.contains("btn--all")) {
+      productsList.insertAdjacentHTML("beforeend", product);
+      btn.classList.add("btn--disabled");
+    }
   }
 
   if (btn.classList.contains("btn--more")) {
     products.slice(startItem, showPerClick).map((product) => productsList.insertAdjacentHTML("beforeend", product));
 
     if (showPerClick == productsLength) {
-      btn.remove();
+      btn.classList.add("btn--disabled");
     } else {
       if (startItem < productsLength) {
         if (productsLength - showPerClick < showPerClick) {
@@ -96,10 +99,8 @@ if (productsTitles.length > 0) {
   productsTitles.forEach((productsTitle) => {
     productsTitle.addEventListener("click", (e) => {
       e.preventDefault();
-
       productsTitles.forEach((elem) => elem.classList.remove("btn--active"));
       productsTitle.classList.add("btn--active");
-
       productsList.textContent = "";
       console.log(productsTitle.firstChild.nodeValue);
       getProductsData(productsTitle);
