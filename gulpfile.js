@@ -10,6 +10,7 @@ const path = {
     js: project_folder + "/js/",
     img: project_folder + "/img/",
     fonts: project_folder + "/fonts/",
+    json: project_folder + "/json/",
   },
   src: {
     html: source_folder + "/html/index.html",
@@ -17,6 +18,7 @@ const path = {
     js: source_folder + "/js/main.js",
     img: source_folder + "/img/**/*",
     fonts: source_folder + "/fonts/**/*",
+    json: source_folder + "/json/*.json",
   },
   watch: {
     html: source_folder + "/**/*.html",
@@ -24,6 +26,7 @@ const path = {
     js: source_folder + "/js/**/*.js",
     img: source_folder + "/img/**/*",
     fonts: source_folder + "/fonts/**/*",
+    json: source_folder + "/json/*.json",
   },
   clean: "./" + project_folder + "/",
 };
@@ -49,6 +52,7 @@ const ttf2woff = require("gulp-ttf2woff");
 const ttf2woff2 = require("gulp-ttf2woff2");
 const fonter = require("gulp-fonter");
 const htmlmin = require("gulp-htmlmin");
+const plumber = require("gulp-plumber");
 
 const server = () => {
   browserSync.init({
@@ -63,6 +67,7 @@ const server = () => {
 
 const html = () => {
   src(path.src.html)
+    .pipe(plumber())
     .pipe(fileinclude())
     .pipe(webphtml())
     .pipe(
@@ -72,6 +77,7 @@ const html = () => {
     )
     .pipe(dest(path.build.html));
   return src(path.src.html)
+    .pipe(plumber())
     .pipe(fileinclude())
     .pipe(webphtml())
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -81,6 +87,7 @@ const html = () => {
 
 const css = () => {
   return src(path.src.css)
+    .pipe(plumber())
     .pipe(
       sass({
         outputStyle: "expanded",
@@ -107,6 +114,7 @@ const css = () => {
 
 const js = () => {
   return src(path.src.js)
+    .pipe(plumber())
     .pipe(fileinclude())
     .pipe(babel())
     .pipe(dest(path.build.js))
@@ -189,19 +197,24 @@ function fontsStyle() {
 
 function cb() {}
 
+function json() {
+  return src(path.src.json).pipe(plumber()).pipe(dest(path.build.json));
+}
+
 const watchFiles = () => {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], img);
   gulp.watch([path.watch.fonts], fonts);
+  gulp.watch([path.watch.json], json);
 };
 
 const clean = () => {
   return del(path.clean);
 };
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, img, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, json, img, fonts));
 const watch = gulp.parallel(build, fontsStyle, watchFiles, server);
 
 exports.html = html;
@@ -209,6 +222,7 @@ exports.css = css;
 exports.js = js;
 exports.img = img;
 exports.fonts = fonts;
+exports.json = json;
 exports.clean = clean;
 exports.fontsStyle = fontsStyle;
 exports.watchFiles = watchFiles;

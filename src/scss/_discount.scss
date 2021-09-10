@@ -1,0 +1,53 @@
+/* products */
+.discount {
+  &__container {
+    margin: 80px auto;
+  }
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 255px;
+    margin: 15px;
+  }
+
+  &__img {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+
+    &--new {
+      font-weight: 700;
+    }
+
+    &--old {
+      margin-left: 10px;
+      color: $first-color;
+      text-decoration: line-through;
+    }
+  }
+}

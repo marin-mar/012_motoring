@@ -20,19 +20,29 @@
   &__item {
     max-width: 700px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 10px;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
   }
 
   &__img {
   }
 
   &__article {
-    width: 50%;
     padding: 20px;
+    text-align: center;
+    max-width: 95vw;
+
+    @media (min-width: 768px) {
+      width: 50%;
+      text-align: left;
+    }
   }
 
   &__subtitle {

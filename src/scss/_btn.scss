@@ -1,0 +1,43 @@
+/* buttons */
+
+.btn {
+  font-weight: 700;
+  font-size: 40px;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  color: $first-color;
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all 0.5s linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.1);
+  }
+
+  &--active {
+    color: $second-color;
+    transform: scale(1.1);
+    cursor: auto;
+  }
+
+  &--more {
+    border: 1px solid $second-color;
+    transform: scale(0.9);
+  }
+
+  &--all {
+    border: 1px solid $second-color;
+    transform: scale(0.9);
+  }
+
+  &--disabled {
+    cursor: auto;
+    color: $first-color;
+  }
+
+  &--loading {
+  }
+}
