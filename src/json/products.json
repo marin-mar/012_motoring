@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "trending",
+    "group": "Trending",
     "img": "/img/products/products__item--01.png",
     "newprice": "$48.00",
     "oldprice": "$92.00"
@@ -12,7 +12,7 @@
     "id": "2",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "featured",
+    "group": "Featured",
     "img": "/img/products/products__item--02.png",
     "newprice": "$40.00",
     "oldprice": "$90.00"
@@ -21,7 +21,7 @@
     "id": "3",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "bestseller",
+    "group": "Bestseller",
     "img": "/img/products/products__item--03.png",
     "newprice": "$38.00",
     "oldprice": "$85.00"
@@ -30,7 +30,7 @@
     "id": "4",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "trending",
+    "group": "Trending",
     "img": "/img/products/products__item--04.png",
     "newprice": "$45.00",
     "oldprice": "$92.00"
@@ -39,7 +39,7 @@
     "id": "5",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "featured",
+    "group": "Featured",
     "img": "/img/products/products__item--05.png",
     "newprice": "$30.00",
     "oldprice": "$62.00"
@@ -48,7 +48,7 @@
     "id": "6",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "bestseller",
+    "group": "Bestseller",
     "img": "/img/products/products__item--06.png",
     "newprice": "$20.00",
     "oldprice": "$40.00"
@@ -57,7 +57,7 @@
     "id": "7",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "trending",
+    "group": "Trending",
     "img": "/img/products/products__item--07.png",
     "newprice": "$30.00",
     "oldprice": "$55.00"
@@ -66,7 +66,7 @@
     "id": "8",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "featured",
+    "group": "Featured",
     "img": "/img/products/products__item--08.png",
     "newprice": "$35.00",
     "oldprice": "$65.00"
@@ -75,7 +75,7 @@
     "id": "9",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "bestseller",
+    "group": "Bestseller",
     "img": "/img/products/products__item--09.png",
     "newprice": "$40.00",
     "oldprice": "$82.00"
@@ -84,7 +84,7 @@
     "id": "10",
     "title": "Product",
     "text": "Our product for your car",
-    "group": "trending",
+    "group": "Trending",
     "img": "/img/products/products__item--10.png",
     "newprice": "$50.00",
     "oldprice": "$95.00"
