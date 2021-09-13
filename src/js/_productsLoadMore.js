@@ -1,8 +1,8 @@
 /* products - get products data from json */
+const productsItems = document.querySelectorAll(".products__item");
 const productsList = document.querySelector(".products__list");
 const productsDataFile = "../json/products.json";
 const productsTitles = document.querySelectorAll(".products__title");
-const discountList = document.querySelector(".discount__list");
 
 if (productsTitles.length > 0) {
   productsTitles.forEach((productsTitle) => {
@@ -15,6 +15,22 @@ if (productsTitles.length > 0) {
     });
   });
 }
+
+// const productsMoreBtn = document.querySelector(".products__btn.btn--more");
+// const productsAllBtn = document.querySelector(".products__btn.btn--all");
+
+// productsMoreBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   getProductsData(productsMoreBtn);
+// });
+
+// productsAllBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   productsList.textContent = "";
+//   getProductsData(productsAllBtn);
+//   productsMoreBtn.classList.add("btn--disabled");
+//   productsAllBtn.classList.add("btn--disabled");
+// });
 
 async function getProductsData(btn) {
   if (!btn.classList.contains("btn--disabled")) {
@@ -41,16 +57,14 @@ let showPerClick = 3;
 function loadProductsData(data, btn) {
   productsLength = data.length;
   for (let i = 0; i < data.length; i++) {
-    let product = `<li data-prodid="${data[i].id}" class="products__item">
+    let product = `
+    <li data-prodid="${data[i].id}" class="products__item">
     	<img class="products__img" src="${data[i].img}" alt="${data[i].title}" width="260" height="300" />
     	<h3 class="products__subtitle">${data[i].title}</h3>
     	<p class="products__text">${data[i].text}</p>
     	<p class="products__price">
-    		<span class="products__price--new">${data[i].newprice}</span>`;
-    if (data[i].oldprice) {
-      product += `<span class="products__price--old">${data[i].oldprice}</span>`;
-    }
-    product += `        	
+    		<span class="products__price--new">${data[i].newprice}</span>
+    		<span class="products__price--old">${data[i].oldprice}</span>
     	</p>
     </li>`;
 
@@ -62,12 +76,28 @@ function loadProductsData(data, btn) {
       }
     }
 
-    if (btn.classList.contains("discount__title")) {
-      if (data[i].discount == "yes") {
-        discountList.insertAdjacentHTML("beforeend", product);
-      }
-    }
+    // if (btn.classList.contains("btn--all")) {
+    //   productsList.insertAdjacentHTML("beforeend", product);
+    // }
   }
+
+  // if (btn.classList.contains("btn--more")) {
+  //   products.slice(startItem, showPerClick).map((product) => productsList.insertAdjacentHTML("beforeend", product));
+
+  //   if (showPerClick == productsLength) {
+  //     btn.classList.add("btn--disabled");
+  //   } else {
+  //     if (startItem < productsLength) {
+  //       if (productsLength - showPerClick < showPerClick) {
+  //         startItem = showPerClick;
+  //         showPerClick = productsLength;
+  //       } else {
+  //         startItem = showPerClick;
+  //         showPerClick += startItem;
+  //       }
+  //     }
+  //   }
+  // }
 
   return products;
 }

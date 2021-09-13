@@ -8,6 +8,12 @@
 document.addEventListener('DOMContentLoaded', function(){
 	autoPlaySlide();
 
-	// preload products
-	getProductsData(productsMoreBtn);
+	/* preload list of products - featured */
+	const productsTitleFeatured = document.querySelector('.products__title--featured');
+	productsTitleFeatured.classList.add("btn--active");
+	getProductsData(productsTitleFeatured);
+
+	/* preload list of products - discount */ 
+	const discountTitle = document.querySelector('.discount__title');
+	getProductsData(discountTitle);
 })
