@@ -11,6 +11,7 @@ const path = {
     img: project_folder + "/img/",
     fonts: project_folder + "/fonts/",
     json: project_folder + "/json/",
+    video: project_folder + "/video/",
   },
   src: {
     html: source_folder + "/html/index.html",
@@ -19,6 +20,7 @@ const path = {
     img: source_folder + "/img/**/*",
     fonts: source_folder + "/fonts/**/*",
     json: source_folder + "/json/*.json",
+    video: source_folder + "/video/**/*",
   },
   watch: {
     html: source_folder + "/**/*.html",
@@ -27,6 +29,7 @@ const path = {
     img: source_folder + "/img/**/*",
     fonts: source_folder + "/fonts/**/*",
     json: source_folder + "/json/*.json",
+    video: source_folder + "/video/**/*",
   },
   clean: "./" + project_folder + "/",
 };
@@ -201,6 +204,10 @@ function json() {
   return src(path.src.json).pipe(plumber()).pipe(dest(path.build.json));
 }
 
+function video() {
+  return src(path.src.video).pipe(dest(path.build.video));
+}
+
 const watchFiles = () => {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
@@ -208,13 +215,14 @@ const watchFiles = () => {
   gulp.watch([path.watch.img], img);
   gulp.watch([path.watch.fonts], fonts);
   gulp.watch([path.watch.json], json);
+  gulp.watch([path.watch.video], video);
 };
 
 const clean = () => {
   return del(path.clean);
 };
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, json, img, fonts));
+const build = gulp.series(clean, gulp.parallel(html, css, js, json, video, img, fonts));
 const watch = gulp.parallel(build, fontsStyle, watchFiles, server);
 
 exports.html = html;
@@ -223,6 +231,7 @@ exports.js = js;
 exports.img = img;
 exports.fonts = fonts;
 exports.json = json;
+exports.video = video;
 exports.clean = clean;
 exports.fontsStyle = fontsStyle;
 exports.watchFiles = watchFiles;

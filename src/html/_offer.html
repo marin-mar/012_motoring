@@ -1,0 +1,25 @@
+<div class="offer">
+  <div class="offer__container">
+    <video class="offer__video" controls width="300" height="300" poster="/img/video/offer.jpg">
+      <source src="/video/offer.mp4" type="video/mp4" />
+      <!-- MP4 for Safari, IE9, iPhone, iPad, Android, Windows Phone 7 -->
+      <source src="/video/video.webm" type="video/webm" />
+      <!-- WebM/VP8 for Firefox4, Opera, и Chrome -->
+      <source src="/video/video.ogv" type="video/ogg" />
+      <!-- Ogg/Vorbis for old versions Firefox и Opera -->
+      <object data="/video/video.swf" type="application/x-shockwave-flash">
+        <!-- for oldest browsers without tag video -->
+        <param name="movie" value="/video/video.swf" />
+      </object>
+    </video>
+    <!-- ./offer__video -->
+
+    <div class="offer__video-poster">
+      <span class="offer__video-button"></span>
+      <p class="offer__video-text">We Sell Your Car Online !</p>
+    </div>
+    <!-- ./offer__video-poster -->
+  </div>
+  <!-- ./offer__container container -->
+</div>
+<!-- ./offer -->
