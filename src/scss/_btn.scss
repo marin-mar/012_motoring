@@ -40,4 +40,13 @@
 
   &--loading {
   }
+
+  &--red {
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 18px;
+    padding: 15px 30px;
+    color: $light-color;
+    background-color: $second-color;
+  }
 }
