@@ -7,6 +7,7 @@ body {
   scroll-behavior: smooth;
   color: $dark-color;
   background-color: $light-color;
+  overflow-x: hidden;
 
   &.locked {
     overflow: hidden;
