@@ -9,7 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 
     @media (min-width: 1400px) {
       justify-content: space-around;
@@ -57,8 +57,8 @@
   &__list {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   &__item {
@@ -76,7 +76,7 @@
       & > .footer__link {
         display: flex;
         flex-direction: row;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
       }
 
