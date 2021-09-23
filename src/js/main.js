@@ -3,7 +3,6 @@
 @@include('_intro.js')
 @@include('_products.js')
 @@include('_offer.js')
-
 @@include('_popup404.js')
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -12,9 +11,11 @@ document.addEventListener('DOMContentLoaded', function(){
 	/* preload list of products - featured */
 	const productsTitleFeatured = document.querySelector('.products__title--featured');
 	productsTitleFeatured.classList.add("btn--active");
-	getProductsData(productsTitleFeatured);
+	loadProductsData(productsTitleFeatured, productsData);
 
 	/* preload list of products - discount */ 
 	const discountTitle = document.querySelector('.discount__title');
-	getProductsData(discountTitle);
+	loadProductsData(discountTitle, productsData);
 })
+
+
