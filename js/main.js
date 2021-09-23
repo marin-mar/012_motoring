@@ -118,6 +118,91 @@ nextControl.addEventListener("click", nextSlide);
 previousControl.addEventListener("click", previousSlide);
 introSlider.addEventListener("mouseover", pauseSlideshow);
 introSlider.addEventListener("mouseout", playSlideshow);
+/* products.json */
+
+const productsData = [{
+  "id": "1",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Trending",
+  "img": "img/products/products__item--01.png",
+  "newprice": "$48.00",
+  "oldprice": "$92.00",
+  "discount": "yes"
+}, {
+  "id": "2",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Featured",
+  "img": "img/products/products__item--02.png",
+  "newprice": "$40.00",
+  "oldprice": "$90.00",
+  "discount": "yes"
+}, {
+  "id": "3",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Bestseller",
+  "img": "img/products/products__item--03.png",
+  "newprice": "$38.00",
+  "oldprice": "$85.00",
+  "discount": "yes"
+}, {
+  "id": "4",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Trending",
+  "img": "img/products/products__item--04.png",
+  "newprice": "$45.00"
+}, {
+  "id": "5",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Featured",
+  "img": "img/products/products__item--05.png",
+  "newprice": "$30.00"
+}, {
+  "id": "6",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Bestseller",
+  "img": "img/products/products__item--06.png",
+  "newprice": "$20.00",
+  "oldprice": "$40.00",
+  "discount": "yes"
+}, {
+  "id": "7",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Trending",
+  "img": "img/products/products__item--07.png",
+  "newprice": "$30.00"
+}, {
+  "id": "8",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Featured",
+  "img": "img/products/products__item--08.png",
+  "newprice": "$35.00",
+  "oldprice": "$65.00",
+  "discount": "yes"
+}, {
+  "id": "9",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Bestseller",
+  "img": "img/products/products__item--09.png",
+  "newprice": "$40.00"
+}, {
+  "id": "10",
+  "title": "Product",
+  "text": "Our product for your car",
+  "group": "Trending",
+  "img": "img/products/products__item--10.png",
+  "newprice": "$50.00",
+  "oldprice": "$95.00",
+  "discount": "yes"
+}];
 /* products - get products data from json */
 
 const productsList = document.querySelector(".products__list");
@@ -132,52 +217,28 @@ if (productsTitles.length > 0) {
       productsTitles.forEach(elem => elem.classList.remove("btn--active"));
       productsTitle.classList.add("btn--active");
       productsList.textContent = "";
-      getProductsData(productsTitle);
+      loadProductsData(productsTitle, productsData);
     });
   });
 }
 
-async function getProductsData(btn) {
-  if (!btn.classList.contains("btn--disabled")) {
-    btn.classList.add("btn--disabled");
-    let response = await fetch(productsDataFile, {
-      method: "GET"
-    });
-
-    if (response.ok) {
-      let result = await response.json();
-      loadProductsData(result, btn);
-      btn.classList.remove("btn--disabled");
-    } else {
-      alert("Error HTTP: " + response.status);
-    }
-  }
-}
-
-let products = [];
-let productsLength = 0;
-let startItem = 0;
-let showPerClick = 3;
-
-function loadProductsData(data, btn) {
-  productsLength = data.length;
-
+function loadProductsData(btn, data) {
   for (let i = 0; i < data.length; i++) {
-    let product = `<li data-prodid="${data[i].id}" class="products__item">
-    	<img class="products__img" src="${data[i].img}" alt="${data[i].title}" width="260" height="300" />
-    	<h3 class="products__subtitle">${data[i].title}</h3>
-    	<p class="products__text">${data[i].text}</p>
-    	<p class="products__price">
-    		<span class="products__price--new">${data[i].newprice}</span>`;
+    let product = `
+      <li data-prodid="${data[i].id}" class="products__item">
+      <img class="products__img" src="${data[i].img}" alt="${data[i].title}" width="260" height="300" />
+      <h3 class="products__subtitle">${data[i].title}</h3>
+      <p class="products__text">${data[i].text}</p>
+      <p class="products__price">
+        <span class="products__price--new">${data[i].newprice}</span>`;
 
     if (data[i].oldprice) {
       product += `<span class="products__price--old">${data[i].oldprice}</span>`;
     }
 
-    product += `        	
-    	</p>
+    product += `
+      </p>
     </li>`;
-    products.push(product);
 
     if (btn.classList.contains("products__title")) {
       if (btn.firstChild.nodeValue == data[i].group) {
@@ -191,8 +252,6 @@ function loadProductsData(data, btn) {
       }
     }
   }
-
-  return products;
 }
 /* offer - video */
 
@@ -236,9 +295,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const productsTitleFeatured = document.querySelector('.products__title--featured');
   productsTitleFeatured.classList.add("btn--active");
-  getProductsData(productsTitleFeatured);
+  loadProductsData(productsTitleFeatured, productsData);
   /* preload list of products - discount */
 
   const discountTitle = document.querySelector('.discount__title');
-  getProductsData(discountTitle);
+  loadProductsData(discountTitle, productsData);
 });

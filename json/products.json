@@ -4,7 +4,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Trending",
-    "img": "/img/products/products__item--01.png",
+    "img": "img/products/products__item--01.png",
     "newprice": "$48.00",
     "oldprice": "$92.00",
     "discount": "yes"
@@ -14,7 +14,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Featured",
-    "img": "/img/products/products__item--02.png",
+    "img": "img/products/products__item--02.png",
     "newprice": "$40.00",
     "oldprice": "$90.00",
     "discount": "yes"
@@ -24,7 +24,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Bestseller",
-    "img": "/img/products/products__item--03.png",
+    "img": "img/products/products__item--03.png",
     "newprice": "$38.00",
     "oldprice": "$85.00",
     "discount": "yes"
@@ -34,7 +34,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Trending",
-    "img": "/img/products/products__item--04.png",
+    "img": "img/products/products__item--04.png",
     "newprice": "$45.00"
   },
   {
@@ -42,7 +42,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Featured",
-    "img": "/img/products/products__item--05.png",
+    "img": "img/products/products__item--05.png",
     "newprice": "$30.00"
   },
   {
@@ -50,7 +50,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Bestseller",
-    "img": "/img/products/products__item--06.png",
+    "img": "img/products/products__item--06.png",
     "newprice": "$20.00",
     "oldprice": "$40.00",
     "discount": "yes"
@@ -60,7 +60,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Trending",
-    "img": "/img/products/products__item--07.png",
+    "img": "img/products/products__item--07.png",
     "newprice": "$30.00"
   },
   {
@@ -68,7 +68,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Featured",
-    "img": "/img/products/products__item--08.png",
+    "img": "img/products/products__item--08.png",
     "newprice": "$35.00",
     "oldprice": "$65.00",
     "discount": "yes"
@@ -78,7 +78,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Bestseller",
-    "img": "/img/products/products__item--09.png",
+    "img": "img/products/products__item--09.png",
     "newprice": "$40.00"
   },
   {
@@ -86,7 +86,7 @@
     "title": "Product",
     "text": "Our product for your car",
     "group": "Trending",
-    "img": "/img/products/products__item--10.png",
+    "img": "img/products/products__item--10.png",
     "newprice": "$50.00",
     "oldprice": "$95.00",
     "discount": "yes"

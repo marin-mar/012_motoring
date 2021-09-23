@@ -72,7 +72,8 @@ body {
   scroll-behavior: smooth;
   color: #111111;
   background-color: #ffffff;
-  overflow-x: hidden;
+  min-height: 100%;
+  position: relative;
 }
 
 body.locked {
@@ -515,19 +516,19 @@ picture {
 }
 
 .features__item--returns {
-  background-image: url("/img/features/features__item--returns.svg");
+  background-image: url("../img/features/features__item--returns.svg");
 }
 
 .features__item--shipping {
-  background-image: url("/img/features/features__item--shipping.svg");
+  background-image: url("../img/features/features__item--shipping.svg");
 }
 
 .features__item--shopping {
-  background-image: url("/img/features/features__item--shopping.svg");
+  background-image: url("../img/features/features__item--shopping.svg");
 }
 
 .features__item--support {
-  background-image: url("/img/features/features__item--support.svg");
+  background-image: url("../img/features/features__item--support.svg");
 }
 
 .features__subtitle {
@@ -698,7 +699,7 @@ picture {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/img/video/offer.jpg");
+  background-image: url("../img/video/offer.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -1180,4 +1181,4 @@ picture {
 
 .webp .banner__item--02 { background-image: url(../img/banner/banner__02.webp); }
 
-.webp .offer__video-poster { background-image: url(/img/video/offer.webp); }
+.webp .offer__video-poster { background-image: url(../img/video/offer.webp); }
