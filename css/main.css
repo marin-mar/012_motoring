@@ -926,10 +926,6 @@ picture {
   margin-bottom: 30px;
 }
 
-.footer__text {
-  line-height: 1.5px;
-}
-
 .footer__social-list {
   margin-top: 30px;
   display: flex;
