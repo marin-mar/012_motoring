@@ -9,7 +9,9 @@
 - При клике на несуществующие ссылки всплывает попап меню 404 (как альтернатива странице 404).<br>
 - Продукты (Our products) и дисконтные продукты (Recommended Products) подгражуются из json-файла. На GitHub не работает метод fetch, поэтому json вмонтировать в сам js-файл с продуктами. При клике на кнопки-заголовки продукты из json подгружаются согласно их категориям.<br>
 - Видео-обложка и запуск самого видео стилизованы согласно дизайну.<br>
-- Итоговые файлы в двух вариантах - сжатом для сайта и развернутом для наглядности. Проверено в валидаторах W3C. 
+- Итоговые файлы в двух вариантах - сжатом для сайта и развернутом для наглядности. Проверено в валидаторах W3C.<br>
+- Сайт размещен:<br>
+<a href="https://marin-mar.github.io/motoring/" rel="noreferrer" target="blank" >https://marin-mar.github.io/motoring/</a><br>
 </h3>
 ================================
 <h3>Explanation of the project:</h3> 
@@ -23,5 +25,7 @@
 - By clicking on non-existent links popup404 pops up (as an alternative to page 404).<br>
 - Products (Our products) and discount products (Recommended Products) are rendering from a json file. The fetch method does not work on GitHub, so json should be embedded in the js-file with the products itself. By clicking on the buttons-headers, products from json are loaded according to their categories.<br>
 - The video cover and the launch of the video itself are stylized according to the design.<br>
-- The final files are in two versions - compressed for the site and expanded for clarity. Tested in W3C validators.
+- The final files are in two versions - compressed for the site and expanded for clarity. Tested in W3C validators.<br>
+- Site is published at:<br>
+<a href="https://marin-mar.github.io/motoring/" rel="noreferrer" target="blank" >https://marin-mar.github.io/motoring/</a><br>
 </h3>
